@@ -54,16 +54,16 @@ jobs:
     - name: Install dependencies
       run: |
         DEBIAN_FRONTEND=noninteractive \
-        sudo apt-get update -y --no-install-recommends \
-        && sudo apt-get install -y \
+        sudo apt-get update --yes \
+        && sudo apt-get install --yes --no-install-recommends --no-install-suggests\
         automake \
         libtool \
         autoconf \
         build-essential \
-        gcc>=10 \
-        clang>=11 \
+        gcc \
+        clang \
         git \
-        cmake>=3.25.1 \
+        cmake \
         ninja-build \
         wget
 
@@ -78,11 +78,11 @@ jobs:
       run: |
         echo "preset=${{ matrix.prefix }}-${{ matrix.c_compiler }}-${{ matrix.build_type }}" >> "$GITHUB_OUTPUT"
 
-    - name: Configure CMake
+    - name: CMake Configure
       run: >
         cmake --preset ${{ steps.strings.outputs.preset }}
 
-    - name: Build
+    - name: CMake Ninja Build
       run: cmake --build --preset ${{ steps.strings.outputs.preset }}
 
     # - name: Test
