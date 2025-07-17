@@ -65,8 +65,7 @@ jobs:
         git \
         cmake>=3.25.1 \
         ninja-build \
-        wget \
-        && rm -rf /var/lib/apt/lists/*
+        wget
 
     # Build recent versions of libuv, openssl and hwloc as static libraries.
     - name: Build dependencies
