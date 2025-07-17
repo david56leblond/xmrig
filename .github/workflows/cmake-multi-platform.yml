@@ -54,8 +54,8 @@ jobs:
     - name: Install dependencies
       run: |
         DEBIAN_FRONTEND=noninteractive \
-        apt-get update -y --no-install-recommends \
-        && apt-get install -y \
+        sudo apt-get update -y --no-install-recommends \
+        && sudo apt-get install -y \
         automake \
         libtool \
         autoconf \
