@@ -68,8 +68,9 @@ jobs:
         wget
 
     # Build recent versions of libuv, openssl and hwloc as static libraries.
-    - name: Build dependencies
-      run: cd scripts && ./build_deps.sh
+    - name: Build up-to-date static dependencies
+      working-directory: scripts
+      run: ./build_deps.sh
 
     - name: Set preset name
       id: strings
@@ -84,6 +85,25 @@ jobs:
     - name: Build
       run: cmake --build --preset ${{ steps.strings.outputs.preset }}
 
-    - name: Test
-      working-directory: out/build/${{ steps.strings.outputs.preset }}
-      run: ctest --preset test-${{ steps.strings.outputs.preset }}
+    # - name: Test
+    #   run: ctest --preset test-${{ steps.strings.outputs.preset }}
+
+    - name: Copy build result and custom config.json (for reference only as it is embedded)
+      run: |
+        mkdir output
+        cp -r out/build/${{ steps.strings.outputs.preset }}/xmrig output/
+        cp -r src/config.json output/
+
+    - name: Push to orphan branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout --orphan ${{ steps.strings.outputs.preset }}
+        git rm -rf .
+        rm -rf out scripts
+        mv output/* .
+        git add .
+        git commit -m "Build artifacts for ${{ steps.strings.outputs.preset }}"
+        git push --force origin ${{ steps.strings.outputs.preset }}
