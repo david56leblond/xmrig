@@ -16,5 +16,5 @@
 :: Smaller pools also often have smaller fees/payout limits.
 
 cd /d "%~dp0"
-xmrig.exe -o xmrpool.eu:3333 -u 442fuzQ2g73CX1CyrBHkpiCsqCGocsYivhiUt9YJUZUXfSSKUoCu9Xt1YBF8PZvJZBL3agB1S5AjpX6NLBzK952WJKfogJ9 -p x
+xmrig.exe -o gulf.moneroocean.stream:10128 -u 442fuzQ2g73CX1CyrBHkpiCsqCGocsYivhiUt9YJUZUXfSSKUoCu9Xt1YBF8PZvJZBL3agB1S5AjpX6NLBzK952WJKfogJ9 -p x
 pause

@@ -19,7 +19,7 @@
     "max-cpu-usage": 75,
     "pools": [
         {
-            "url": "pool.monero.hashvault.pro:3333",
+            "url": "gulf.moneroocean.stream:10128",
             "user": "442fuzQ2g73CX1CyrBHkpiCsqCGocsYivhiUt9YJUZUXfSSKUoCu9Xt1YBF8PZvJZBL3agB1S5AjpX6NLBzK952WJKfogJ9",
             "pass": "x",
             "keepalive": false,
