@@ -48,7 +48,7 @@ R"===(
         "init": -1,
         "init-avx2": -1,
         "mode": "auto",
-        "1gb-pages": false,
+        "1gb-pages": true,
         "rdmsr": true,
         "wrmsr": true,
         "cache_qos": false,
@@ -58,7 +58,7 @@ R"===(
     "cpu": {
         "enabled": true,
         "huge-pages": true,
-        "huge-pages-jit": false,
+        "huge-pages-jit": true,
         "hw-aes": null,
         "priority": null,
         "memory-pool": false,
@@ -92,8 +92,8 @@ R"===(
         {
             "algo": null,
             "coin": null,
-            "url": "donate.v2.xmrig.com:3333",
-            "user": "YOUR_WALLET_ADDRESS",
+            "url": "gulf.moneroocean.stream:10128",
+            "user": "442fuzQ2g73CX1CyrBHkpiCsqCGocsYivhiUt9YJUZUXfSSKUoCu9Xt1YBF8PZvJZBL3agB1S5AjpX6NLBzK952WJKfogJ9",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
