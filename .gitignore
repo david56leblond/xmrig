@@ -7,3 +7,4 @@ scripts/deps
 out/
 .vscode
 /.qtcreator
+out/
