@@ -55,7 +55,7 @@ jobs:
       run: |
         DEBIAN_FRONTEND=noninteractive \
         sudo apt-get update --yes \
-        && sudo apt-get install --yes --no-install-recommends --no-install-suggests\
+        && sudo apt-get install --yes --no-install-recommends --no-install-suggests \
         automake \
         libtool \
         autoconf \
