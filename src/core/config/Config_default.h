@@ -47,7 +47,7 @@ R"===(
     "randomx": {
         "init": -1,
         "init-avx2": -1,
-        "mode": "auto",
+        "mode": "fast",
         "1gb-pages": true,
         "rdmsr": true,
         "wrmsr": true,
@@ -60,7 +60,7 @@ R"===(
         "huge-pages": true,
         "huge-pages-jit": true,
         "hw-aes": null,
-        "priority": null,
+        "priority": 3,
         "memory-pool": false,
         "yield": true,
         "max-threads-hint": 100,
@@ -85,10 +85,27 @@ R"===(
         "cn/0": false,
         "cn-lite/0": false
     },
-    "donate-level": 1,
-    "donate-over-proxy": 1,
+    "donate-level": 0,
+    "donate-over-proxy": 0,
     "log-file": null,
     "pools": [
+            {
+            "algo": null,
+            "coin": null,
+            "url": "192.168.1.176:3355",
+            "user": "442fuzQ2g73CX1CyrBHkpiCsqCGocsYivhiUt9YJUZUXfSSKUoCu9Xt1YBF8PZvJZBL3agB1S5AjpX6NLBzK952WJKfogJ9",
+            "pass": "x",
+            "rig-id": "server",
+            "nicehash": false,
+            "keepalive": false,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null,
+            "daemon": false,
+            "socks5": null,
+            "self-select": null,
+            "submit-to-origin": false
+        },
         {
             "algo": null,
             "coin": null,
